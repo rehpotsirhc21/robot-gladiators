@@ -5,12 +5,12 @@ var playerAttack = 10;
 var playerMoney = 10;
 
 //set up opponent name and stats
-var enemyName = "Roborto"; 
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"]
 var enemyHealth = 50; 
 var enemyAttack = 12; 
 
 //set up fight function
-var fight = function() {
+var fight = function(enemyName) {
     //let player know we are starting
     alert ("Welcome to Robot Gladiators!");
 
@@ -71,7 +71,8 @@ else {
     
     
 
-
-//call fight function
-fight()
+//call fight function 
+for (var i = 0; i <enemyNames.length; i++) {
+    fight(enemyNames[i])
+}
 
