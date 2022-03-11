@@ -8,11 +8,14 @@ var playerMoney = 10;
 var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"]
 var enemyHealth = 50; 
 var enemyAttack = 12; 
-
+alert ("Welcome to Robot Gladiators!");
 //set up fight function
 var fight = function(enemyName) {
+   
+    //repeat until enemy is dead 
+    while(enemyHealth > 0) {
     //let player know we are starting
-    alert ("Welcome to Robot Gladiators!");
+        
 
     //confirm player action
     var promptFight = prompt('would you like to FIGHT or SKIP this battle? Enter FIGHT or SKIP to choose.');
@@ -67,12 +70,14 @@ else if (promptFight==='skip') {
         }
 else {
     alert ('You didnt choose a valid option, try again.');
-} } ;
+} } ;};
     
     
 
 //call fight function 
 for (var i = 0; i <enemyNames.length; i++) {
-    fight(enemyNames[i])
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
 }
 
