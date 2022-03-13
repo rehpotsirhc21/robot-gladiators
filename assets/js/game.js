@@ -2,18 +2,18 @@
 var fight = function (enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
     // ask player if they'd like to fight or run
-    var promptFight = window.prompt(
+    var promptFight = prompt(
       'Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.'
     );
     promptFight = promptFight.toLowerCase();
     // if player picks "skip" confirm and then stop the loop
     if (promptFight === "skip") {
       // confirm player wants to skip
-      var confirmSkip = window.confirm("Are you sure you'd like to quit?");
+      var confirmSkip = confirm("Are you sure you'd like to quit?");
 
       // if yes (true), leave fight
       if (confirmSkip) {
-        window.alert(
+        alert(
           `${playerInfo.name} has decided to skip this fight. Goodbye!`
         );
         // subtract money from layerNaplayerInfo.money for skipping
@@ -31,14 +31,14 @@ var fight = function (enemy) {
 
     // check enemy's health
     if (enemy.health <= 0) {
-      window.alert(`${enemy.name} has died!`);
+      alert(`${enemy.name} has died!`);
 
       // award player money for winning
       playerInfo.money = Math.max(0, playerInfo.money + 20);
       // leave while() loop since enemy is dead
       break;
     } else {
-      window.alert(` ${enemy.name} still has ${enemy.health} health left.`);
+      alert(` ${enemy.name} still has ${enemy.health} health left.`);
     }
     // generate enemy damage
     var damage = randomNumber(enemy.attack - 3, enemy.attack);
@@ -50,11 +50,11 @@ var fight = function (enemy) {
 
     // check player's health
     if (playerInfo.health <= 0) {
-      window.alert(`${playerInfo.name} has died`);
+      alert(`${playerInfo.name} has died`);
       // leave while() loop if player is dead
       break;
     } else {
-      window.alert(
+      alert(
         `${playerInfo.name} still has ${playerInfo.health} health left.`
       );
     }
